@@ -177,7 +177,7 @@ def main():
         logger.error(f"Failed credentials directory permission check: {e}")
         sys.exit(1)
         
-@app.get("/")
+@server.get("/")
 def health_check():
     return {"status": "ok"}
     
