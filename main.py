@@ -176,7 +176,11 @@ def main():
         safe_print("   Please ensure the service has write permissions to create/access the credentials directory")
         logger.error(f"Failed credentials directory permission check: {e}")
         sys.exit(1)
-
+        
+@app.get("/")
+def health_check():
+    return {"status": "ok"}
+    
     try:
         # Set transport mode for OAuth callback handling
         set_transport_mode(args.transport)
